@@ -7,209 +7,52 @@
 
 .splash-screen {
   width: 100%;
-  max-width: 400px;
   height: 100vh;
   height: 100dvh;
-  min-height: 600px;
-
-  margin: 0 auto;
-
   position: relative;
   overflow: hidden;
-
   display: flex;
-  flex-direction: column;
   align-items: center;
-
-  background:
-    radial-gradient(
-      circle at 50% 40%,
-      #19265d 0%,
-      #101633 42%,
-      #070b1d 100%
-    );
-
-  color: white;
+  justify-content: center;
+  background: transparent;
   perspective: 1000px;
-}
-
-
-.background-grid {
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    linear-gradient(
-      rgba(255,255,255,0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.035) 1px,
-      transparent 1px
-    );
-
-  background-size: 35px 35px;
-  opacity: 0.4;
-}
-
-
-.glow {
-  position: absolute;
-
-  width: 240px;
-  height: 240px;
-
-  border-radius: 50%;
-  filter: blur(95px);
-
-  opacity: 0.35;
-  pointer-events: none;
-}
-
-.glow-purple {
-  background: #762bff;
-  top: 5%;
-  left: -100px;
-}
-
-.glow-blue {
-  background: #006dff;
-  bottom: 5%;
-  right: -100px;
-}
-
-.glow-pink {
-  background: #df37ff;
-  top: 35%;
-  right: -140px;
-  opacity: 0.2;
-}
-
-.particle {
-  position: absolute;
-
-  width: 3px;
-  height: 3px;
-
-  border-radius: 50%;
-
-  background: #8cecff;
-
-  box-shadow: 0 0 10px #00d9ff;
-
-  pointer-events: none;
 }
 
 .logo-container {
   position: absolute;
-
-  z-index: 6;
-
-  top: 36%;
-  left: 50%;
-
   width: 110px;
   height: 110px;
-
+  top: 50%;
+  left: 50%;
   margin-left: -55px;
   margin-top: -55px;
-
+  z-index: 10;
   perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .logo-box {
   width: 100px;
   height: 100px;
-
   position: relative;
-  overflow: hidden;
-
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  justify-content: center;
   border-radius: 26px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #4243b5,
-      #1456b9,
-      #182a72
-    );
-
-  border: 1px solid #819aff;
-
-  box-shadow:
-    0 0 30px rgba(89,72,255,0.7),
-    0 0 65px rgba(0,180,255,0.2),
-    inset 0 0 25px rgba(255,255,255,0.2);
-
+  overflow: hidden;
   transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 .logo-image {
-  width: 76%;
-  height: 76%;
-
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
-
+  display: block;
   position: relative;
   z-index: 2;
-
-  display: block;
-
-  filter:
-    drop-shadow(0 0 10px rgba(0,220,255,0.65));
-}
-
-
-.logo-shine {
-  position: absolute;
-
-  width: 45px;
-  height: 150%;
-
-  top: -20%;
-  left: -70%;
-
-  background: rgba(255,255,255,0.18);
-
-  transform: rotate(35deg);
-
-  animation: logoShine 3s ease-in-out infinite;
-
-  z-index: 3;
-}
-
-@keyframes logoShine {
-  0% {
-    left: -70%;
-  }
-
-  60%,
-  100% {
-    left: 140%;
-  }
-}
-
-
-.logo-shadow {
-  position: absolute;
-
-  width: 90px;
-  height: 15px;
-
-  bottom: -17px;
-  left: 10px;
-
-  background: #006dff;
-
-  filter: blur(20px);
-
-  opacity: 0.7;
+  backface-visibility: hidden;
 }
 
 
@@ -219,7 +62,7 @@
   width: 260px;
   height: 260px;
 
-  top: 36%;
+  top: 50%;
   left: 50%;
 
   margin-left: -130px;
@@ -232,277 +75,31 @@
 
 .orbit-icon {
   position: absolute;
-
   top: 50%;
   left: 50%;
-
   width: 40px;
   height: 40px;
-
   margin: -20px 0 0 -20px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   will-change: transform, opacity;
 }
 
 .floating-icon {
   width: 40px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 13px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(52,70,140,0.95),
-      rgba(18,28,75,0.95)
-    );
-
+  background: transparent;
   border: 1px solid var(--icon-color);
-
   box-shadow:
     0 0 13px var(--icon-color),
     inset 0 0 12px rgba(255,255,255,0.12);
-
-  backdrop-filter: blur(12px);
-}
-
-.brand-section {
-  position: absolute;
-
-  width: 100%;
-
-  top: 60%;
-
-  text-align: center;
-
-  z-index: 7;
-}
-
-.brand-name {
-  font-size: 39px;
-
-  font-weight: 900;
-
-  letter-spacing: -1px;
-}
-
-.brand-dudu {
-  background:
-    linear-gradient(
-      90deg,
-      #ffffff,
-      #a8caff,
-      #ffffff
-    );
-
-  background-size: 200%;
-
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-
-  animation: textFill 3s linear infinite;
-}
-
-.brand-hr {
-  background:
-    linear-gradient(
-      90deg,
-      #00eaff,
-      #a75cff,
-      #ff4fd8,
-      #00eaff
-    );
-
-  background-size: 300%;
-
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  color: transparent;
-
-  animation: textFill 2.5s linear infinite;
-}
-
-@keyframes textFill {
-  from {
-    background-position: 0%;
-  }
-
-  to {
-    background-position: 300%;
-  }
-}
-
-.tagline {
-  margin-top: 17px;
-
-  font-size: 9px;
-
-  letter-spacing: 2px;
-
-  color: #b8c3e7;
-}
-
-
-.brand-decoration {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 5px;
-
-  margin-top: 13px;
-}
-
-.brand-decoration span {
-  height: 3px;
-  width: 15px;
-
-  border-radius: 10px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #00dfff,
-      #9a57ff
-    );
-}
-
-.progress-section {
-  position: absolute;
-
-  width: 80%;
-
-  left: 50%;
-  bottom: 7%;
-
-  transform: translateX(-50%);
-
-  z-index: 8;
-}
-
-.progress-track {
-  width: 100%;
-  height: 7px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  background: #111e3b;
-
-  border: 1px solid #315c9b;
-
-  box-shadow:
-    0 0 12px rgba(0,191,255,0.15);
-}
-
-.progress-fill {
-  height: 100%;
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #00d9ff,
-      #6575ff,
-      #b44cff,
-      #ff43d0
-    );
-
-  box-shadow:
-    0 0 15px #00caff,
-    0 0 25px rgba(0,202,255,0.5);
-
-  will-change: width;
-}
-
-.progress-highlight {
-  position: absolute;
-  width: 25px;
-  height: 7px;
-  top: 0;
-  left: 0;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.7);
-  filter: blur(5px);
-  animation: progressShine 1.5s linear infinite;
-
-  pointer-events: none;
-}
-
-@keyframes progressShine {
-  from {
-    left: -20px;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-.progress-info {
-  display: flex;
-
-  justify-content: space-between;
-
-  margin-top: 13px;
-
-  font-size: 10px;
-
-  color: #aab8d6;
-}
-
-.progress-info strong {
-  color: #00eaff;
-
-  font-weight: 800;
-}
-
-
-.loading-status {
-  text-align: center;
-
-  margin-top: 17px;
-
-  padding: 11px;
-
-  border-radius: 12px;
-
-  background: rgba(255,255,255,0.045);
-
-  border: 1px solid rgba(255,255,255,0.08);
-
-  color: #aab9da;
-
-  font-size: 9px;
-
-  letter-spacing: 1.8px;
-}
-
-.loading-status span {
-  color: #00eaff;
-}
-
-.bottom-caption {
-  text-align: center;
-
-  margin-top: 15px;
-
-  font-size: 8px;
-
-  letter-spacing: 2px;
-
-  color: #6487c7;
+  backdrop-filter: blur(8px);
+  will-change: transform;
 }
 
 
@@ -516,35 +113,25 @@
     transform: scale(0.9);
   }
 
-  .brand-name {
-    font-size: 32px;
-  }
-
-  .progress-section {
-    width: 85%;
-  }
-
 }
 
-@media (max-height: 650px) {
+@media (max-height: 500px) {
 
-  .logo-container,
   .icon-layer {
-    top: 33%;
+    transform: scale(0.8);
   }
 
-  .brand-section {
-    top: 57%;
+  .logo-container {
+    transform: scale(0.85);
   }
 
 }
 
 @media (prefers-reduced-motion: reduce) {
 
-  .brand-dudu,
-  .brand-hr,
-  .logo-shine,
-  .progress-highlight {
+  .logo-container,
+  .logo-box,
+  .floating-icon {
     animation: none;
   }
 
